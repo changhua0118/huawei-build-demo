@@ -1,0 +1,19 @@
+{
+    "name": "huawei-build-demo",
+    "description": "华为构建插件 demo",
+    "author": "Cocos Creator",
+    "version": "1.0.0",
+    "package_version": 2,
+    "panels": {
+        "default": {
+            "main": "./dist/platform/huawei/index.js",
+            "title": "华为构建 demo",
+            "size": {
+                "width": 584,
+                "min-width": 520,
+                "height": 763,
+                "min-height": 500
+            }
+        }
+    }
+}
