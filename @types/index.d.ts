@@ -1,1 +1,2 @@
-/// <reference path='../../../@types/index'/>
+/// <reference path="./editor.d.ts"/>
+/// <reference path="./message.d.ts"/>

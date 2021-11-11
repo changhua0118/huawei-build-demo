@@ -1,18 +1,48 @@
 {
     "name": "huawei-build-demo",
-    "description": "华为构建插件 demo",
+    "description": "i18n:huawei-build-demo.description",
     "author": "Cocos Creator",
     "version": "1.0.0",
     "package_version": 2,
+    "scripts": {
+        "build": "node ./build.js"
+    },
+    "dependencies": {
+        "fs-extra": "^9.0.1",
+        "vue": "^2.6.12"
+    },
+    "devDependencies": {
+        "less": "^3.9.0",
+        "typescript": "^4.0.0",
+        "@types/fs-extra": "^5.0.4",
+        "@types/node": "^10.5.2"
+    },
+    "main": "./dist/main.js",
     "panels": {
         "default": {
-            "main": "./dist/platform/huawei/index.js",
-            "title": "华为构建 demo",
+            "main": "./dist/huawei/index.js",
+            "title": "i18n:huawei-build-demo.title",
             "size": {
                 "width": 584,
                 "min-width": 520,
                 "height": 763,
                 "min-height": 500
+            }
+        }
+    },
+    "contributions": {
+        "menu": [
+            {
+                "path": "i18n:menu.develop/Demo",
+                "label": "Open",
+                "message": "open"
+            }
+        ],
+        "messages": {
+            "open": {
+                "methods": [
+                    "open"
+                ]
             }
         }
     }

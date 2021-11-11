@@ -1,0 +1,103 @@
+.huawei-build-demo {
+    font: inherit;
+    background: var(--color-normal-fill-emphasis);
+    padding: 10px 10px 0;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    position: relative;
+
+    .empty-info {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        user-select: none;
+    }
+
+    .task {
+        position: relative;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: calc(var(--size-normal-radius) * 1px);
+        border: 1px solid var(--color-normal-border);
+        background-color: var(--color-normal-fill);
+    }
+
+    .task[native] {
+        cursor: not-allowed;
+        opacity: 0.4;
+        pointer-events: none;
+    }
+
+    .task .i-del {
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        cursor: pointer;
+        display: none;
+    }
+
+    .task > .i-del:hover {
+        color: var(--color-danger-fill);
+    }
+
+    .task .transparent {
+        background: transparent;
+        border-color: transparent;
+    }
+
+    .task > header {
+        margin-bottom: 6px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .task .time {
+        font-style: italic;
+        color: var(--color-normal-contrast-important);
+    }
+
+    .task > section {
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    .task > section > ui-progress {
+        flex: 1;
+        border-radius: 4px;
+        opacity: 0.8;
+    }
+
+    .task > section .build-log {
+        position: absolute;
+        right: 30px;
+        cursor: pointer;
+        margin: 0 5px;
+        color: var(--color-normal-contrast-weakest);
+    }
+
+    .task > footer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .task > footer .right,
+    .task > footer .left {
+        display: flex;
+    }
+
+    .task > footer .left {
+        max-width: 50%;
+        text-align: left;
+        flex: 1;
+        justify-content: flex-start;
+    }
+
+    .task > footer .right {
+        flex: 1;
+        max-width: 50%;
+        justify-content: flex-end;
+        text-align: right;
+    }
+}

@@ -1,0 +1,28 @@
+<div id="huawei-build-demo" class="huawei-build-demo">
+    <div v-if="!taskList" class="empty-info">
+        <span>{{info}}</span>
+    </div>
+    <template v-for="(item, key, index) in taskList">
+        <div class="task" :native="nativeArr.indexOf(item.options.platform) === -1">
+            <ui-button class="i-del transparent">
+                <ui-icon value="del"></ui-icon>
+            </ui-button>
+            <header>
+                <div>
+                    <span>{{item.options.platform}}</span>
+                    <span class="time">({{item.time}})</span>
+                </div>
+            </header>
+            <section>
+                <ui-progress :state="item.state" value="100" :message="item.message" class="label" :success="item.state === 'success'" :failure="item.state === 'failure'"></ui-progress>
+                <div class="build-log"></div>
+            </section>
+            <footer>
+                <div class="left"></div>
+                <div class="right">
+                    <ui-button @click="onDebug(key)">调试</ui-button>
+                </div>
+            </footer>
+        </div>
+    </template>
+</div>

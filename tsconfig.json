@@ -1,7 +1,14 @@
 {
-    "extends": "../../base.tsconfig.json",
     "compilerOptions": {
+        "target": "es2017",
+        "module": "commonjs",
         "rootDir": "./source",
-        "outDir": "./dist"
+        "outDir": "./dist",
+        "strict": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
     }
 }
