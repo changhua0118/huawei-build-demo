@@ -41,7 +41,7 @@ export async function ready() {
     vm = new Vue({
         el: panel.$.build,
         data: {
-            info: '暂无构建任务，请前往新建构建任务',
+            info: '暂无构建任务，请前往 `项目->构建发布->新建构建任务` 进行新建',
             nativeArr,
             taskList: null
         },
@@ -53,7 +53,9 @@ export async function ready() {
                 const that: any = this;
                 try {
                     const { queue } = await Editor.Message.request('builder', 'query-tasks-info');
-                    that.taskList = queue;
+                    if (Object.keys(queue).length > 0 ) {
+                        that.taskList = queue;
+                    }
                 } catch (error) {
                     that.info = '获取构建任务列表失败';
                 }
